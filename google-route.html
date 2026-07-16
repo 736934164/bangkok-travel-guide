@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>上海出发泰国 8 天 7 晚攻略 | 芭提雅 + 曼谷</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202421;
+      --muted: #667066;
+      --paper: #fffdf7;
+      --soft: #f5f1e8;
+      --line: #ded8c9;
+      --green: #37624a;
+      --teal: #147d88;
+      --gold: #b8832d;
+      --coral: #bd5b45;
+      --plum: #71516a;
+      --sand: #efe5d2;
+      --shadow: 0 18px 48px rgba(36, 46, 34, .13);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: #f4f1e8;
+      line-height: 1.62;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+
+    .hero {
+      min-height: 82vh;
+      color: #fffaf0;
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(13, 24, 20, .08), rgba(13, 24, 20, .84)),
+        url("https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2200&q=82") center/cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(244, 241, 232, 0), #f4f1e8 92%);
+      z-index: -1;
+    }
+    .hero-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 90px 0 112px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(25, 34, 30, .35);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: .95;
+      max-width: 1040px;
+      font-weight: 840;
+      margin-bottom: 22px;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .hero-copy {
+      max-width: 840px;
+      font-size: clamp(17px, 2.1vw, 23px);
+      color: rgba(255,250,240,.88);
+      margin-bottom: 34px;
+      overflow-wrap: anywhere;
+    }
+    .mobile-break { display: none; }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 12px;
+      max-width: 1040px;
+    }
+    .metric {
+      min-height: 102px;
+      padding: 16px 18px;
+      background: rgba(21, 30, 25, .43);
+      border: 1px solid rgba(255,255,255,.24);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+    }
+    .metric b { display: block; font-size: 24px; line-height: 1.15; }
+    .metric span { color: rgba(255,250,240,.72); font-size: 14px; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 247, .91);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      width: min(1180px, calc(100% - 28px));
+      min-height: 62px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-title { flex: 0 0 auto; font-weight: 820; color: var(--green); }
+    .nav-links { display: flex; gap: 8px; white-space: nowrap; }
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    .nav a:hover { color: var(--ink); background: #ece6da; }
+
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 42px 0 84px;
+    }
+    section { margin: 56px 0; scroll-margin-top: 84px; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+    h2 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.14; letter-spacing: 0; }
+    h3 { line-height: 1.25; letter-spacing: 0; }
+    .lede {
+      max-width: 760px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 760;
+      white-space: nowrap;
+      color: var(--green);
+      background: #e5eee7;
+    }
+    .pill.gold { color: #81570f; background: #f0dfbf; }
+    .pill.blue { color: var(--teal); background: #dcecef; }
+    .pill.coral { color: #923b2a; background: #f2d9d0; }
+    .pill.gray { color: var(--muted); background: #ece8dd; }
+
+    .alert-band {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: -34px;
+      position: relative;
+      z-index: 4;
+    }
+    .alert {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--coral);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      min-height: 118px;
+    }
+    .alert b { display: block; font-size: 17px; margin-bottom: 6px; }
+    .alert p { color: var(--muted); font-size: 14px; }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .route-map, .flight-list, .hotel-card, .day-card, .booking-table, .transport-card, .tip-card, .budget-card, .source-card, .check-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .route-map { padding: 22px; min-height: 430px; }
+    .route-map svg { width: 100%; height: auto; display: block; }
+    .route-map text { font-family: inherit; fill: var(--ink); font-weight: 800; }
+    .route-map .small { fill: var(--muted); font-size: 14px; font-weight: 700; }
+    .route-line { fill: none; stroke: var(--green); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+    .route-line.fly { stroke: var(--teal); stroke-dasharray: 14 12; }
+    .route-line.return { stroke: var(--coral); stroke-dasharray: 12 10; }
+    .flight-list { padding: 20px; display: grid; gap: 14px; }
+    .flight {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+    .flight:last-child { border-bottom: 0; padding-bottom: 0; }
+    .flight h3 { font-size: 20px; margin-bottom: 8px; }
+    .flight dl {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 6px 12px;
+      font-size: 14px;
+    }
+    dt { color: var(--muted); font-weight: 760; }
+    dd { color: var(--ink); }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .hotel-card { padding: 22px; }
+    .hotel-card h3 { font-size: 22px; margin-bottom: 10px; }
+    .hotel-card ul { padding-left: 18px; color: var(--muted); }
+    .hotel-card li + li { margin-top: 7px; }
+
+    .days {
+      display: grid;
+      gap: 16px;
+    }
+    .day-card {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      overflow: hidden;
+    }
+    .day-no {
+      background: var(--green);
+      color: #fffaf0;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+    .day-no b { font-size: 34px; line-height: 1; }
+    .day-no span { font-size: 13px; color: rgba(255,250,240,.75); margin-top: 8px; }
+    .day-body { padding: 20px; }
+    .day-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .day-title h3 { font-size: 24px; margin-bottom: 5px; }
+    .day-title p { color: var(--muted); }
+    .day-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: end; align-content: start; }
+    .timeline { display: grid; gap: 8px; }
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 14px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+    .timeline-row time { color: var(--teal); font-weight: 820; font-size: 14px; }
+    .timeline-row p { color: #303831; font-size: 15px; }
+    details {
+      margin-top: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 820;
+      color: var(--green);
+    }
+    details ul { padding-left: 18px; margin-top: 10px; color: var(--muted); }
+    details li + li { margin-top: 6px; }
+
+    .booking-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .booking-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      box-shadow: none;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    th {
+      background: #eee6d6;
+      color: #374139;
+      font-weight: 820;
+    }
+    tr:last-child td { border-bottom: 0; }
+
+    .transport-grid, .tips-grid, .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .transport-card, .tip-card, .source-card, .check-card { padding: 20px; }
+    .transport-card h3, .tip-card h3, .check-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .transport-card ul, .tip-card ul, .check-card ul { padding-left: 18px; color: var(--muted); }
+    .transport-card li + li, .tip-card li + li, .check-card li + li { margin-top: 7px; }
+
+    .budget-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+    .budget-card { padding: 22px; }
+    .budget-row {
+      display: grid;
+      grid-template-columns: 150px 1fr 130px;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .budget-row:last-child { border-bottom: 0; }
+    .bar { height: 10px; border-radius: 999px; background: #eadfce; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--gold)); }
+    .budget-total {
+      padding: 24px;
+      background: #e7efe7;
+      border: 1px solid #cbdccb;
+      border-radius: var(--radius);
+      display: grid;
+      align-content: center;
+    }
+    .budget-total span { color: var(--muted); font-weight: 760; }
+    .budget-total strong { font-size: clamp(32px, 4vw, 52px); line-height: 1; margin: 10px 0 16px; color: var(--green); }
+    .budget-total p { color: var(--muted); }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .source-card a { color: var(--teal); font-weight: 820; }
+    .source-card p { margin-top: 6px; color: var(--muted); font-size: 14px; }
+
+    .backtop {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      font-weight: 900;
+      z-index: 20;
+    }
+
+    @media (max-width: 920px) {
+      .hero { min-height: 76vh; }
+      .hero-inner { width: min(100% - 28px, 1180px); padding-bottom: 84px; }
+      .hero-metrics, .alert-band, .route-grid, .hotel-grid, .budget-grid, .check-grid { grid-template-columns: 1fr; }
+      .transport-grid, .tips-grid, .source-grid { grid-template-columns: repeat(2, 1fr); }
+      .day-card { grid-template-columns: 1fr; }
+      .day-no {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 14px;
+        align-items: end;
+      }
+      .day-top { flex-direction: column; }
+      .day-tags { justify-content: start; }
+    }
+    @media (max-width: 560px) {
+      main { width: calc(100% - 24px); padding-top: 28px; }
+      section { margin: 42px 0; }
+      h1 { font-size: 32px; line-height: 1.08; word-break: break-all; }
+      .hero-copy { font-size: 16px; line-height: 1.7; word-break: break-all; }
+      .hero-inner { width: calc(100% - 28px); }
+      .eyebrow { max-width: 100%; white-space: normal; }
+      .mobile-break { display: block; }
+      .section-head { display: block; }
+      .section-head .pill { margin-top: 12px; }
+      .transport-grid, .tips-grid, .source-grid { grid-template-columns: 1fr; }
+      .timeline-row { grid-template-columns: 84px minmax(0, 1fr); gap: 10px; }
+      .timeline-row p { font-size: 14px; }
+      .budget-row { grid-template-columns: 1fr; gap: 6px; }
+      .metric { min-height: 86px; }
+      .alert { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">Google 路线版 · 2026/07/18-07/25 · 情侣 8 天 7 晚</div>
+      <h1>上海出发泰国攻略：<br class="mobile-break">芭提雅先行，<br class="mobile-break">曼谷收尾</h1>
+      <p class="hero-copy">落地素万那普后直接去芭提雅，先完成海岛、真理寺、大象保育营、Spa 与 Cave Beach Club；7 月 22 日转战曼谷，集中做湄南河、郊区市场、Mahanakhon、大皇宫、郑王庙、泰拳和最后购物。</p>
+      <div class="hero-metrics">
+        <div class="metric"><b>8 天 7 晚</b><span>芭提雅 4 晚 + 曼谷 3 晚</span></div>
+        <div class="metric"><b>TG663 去程</b><span>07:30 PVG T2 -> 11:05 BKK</span></div>
+        <div class="metric"><b>SL926 回程</b><span>18:10 DMK T1 -> 23:35 PVG</span></div>
+        <div class="metric"><b>14:15 死线</b><span>返程日必须出发去廊曼机场</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-title">Thailand Route</div>
+      <div class="nav-links">
+        <a href="#route">路线</a><a href="#hotels">住宿</a><a href="#days">每日</a>
+        <a href="#booking">预约</a><a href="#transport">交通</a><a href="#spots">景点</a>
+        <a href="#budget">预算</a><a href="#tips">避坑</a><a href="#checklist">清单</a><a href="#sources">来源</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="alert-band" aria-label="关键提醒">
+      <div class="alert"><b>去程不进曼谷市区</b><p>BKK 落地后下到 1 楼 8 号门买去芭提雅的大巴票；如果班次不合适，改点到点接送。</p></div>
+      <div class="alert"><b>回程机场是 DMK</b><p>7 月 25 日从廊曼机场 T1 出发，不是素万那普 BKK。导航写 Don Mueang International Airport Terminal 1。</p></div>
+      <div class="alert"><b>狮航行李先核对</b><p>SL926 可能不含托运行李。没有 Checked Baggage 就至少提前 24 小时线上加购。</p></div>
+    </div>
+
+    <section id="route">
+      <div class="section-head">
+        <div><h2>路线与航班</h2><p class="lede">这版固定采用“先芭提雅、后曼谷”的 Google 路线。行程的关键不是多塞点，而是让跨城和返程机场都可控。</p></div>
+        <span class="pill blue">PVG · BKK · Pattaya · Bangkok · DMK</span>
+      </div>
+      <div class="route-grid">
+        <div class="route-map">
+          <svg viewBox="0 0 920 520" role="img" aria-labelledby="routeTitle routeDesc">
+            <title id="routeTitle">上海、曼谷、芭提雅、廊曼返程路线</title>
+            <desc id="routeDesc">上海飞曼谷素万那普，转芭提雅，回曼谷，最后从廊曼飞回上海。</desc>
+            <rect x="0" y="0" width="920" height="520" rx="28" fill="#f8f4e8"/>
+            <path d="M96 96 C230 56 365 82 494 162" class="route-line fly"/>
+            <path d="M494 162 C604 206 688 266 760 342" class="route-line"/>
+            <path d="M760 342 C666 346 582 316 510 252" class="route-line"/>
+            <path d="M510 252 C398 202 246 188 116 410" class="route-line return"/>
+            <g transform="translate(96 96)">
+              <circle r="18" fill="#147d88"/><text x="28" y="-6">上海 PVG</text><text class="small" x="28" y="18">7/18 07:30 出发</text>
+            </g>
+            <g transform="translate(494 162)">
+              <circle r="18" fill="#bd5b45"/><text x="28" y="-6">曼谷 BKK</text><text class="small" x="28" y="18">7/18 11:05 抵达</text>
+            </g>
+            <g transform="translate(760 342)">
+              <circle r="18" fill="#37624a"/><text x="-162" y="-10">芭提雅</text><text class="small" x="-162" y="16">7/18-7/22 海岛慢度假</text>
+            </g>
+            <g transform="translate(510 252)">
+              <circle r="18" fill="#b8832d"/><text x="28" y="-6">曼谷市区</text><text class="small" x="28" y="18">7/22-7/25 打卡采购</text>
+            </g>
+            <g transform="translate(116 410)">
+              <circle r="18" fill="#71516a"/><text x="28" y="-6">DMK -> PVG</text><text class="small" x="28" y="18">7/25 18:10 回程</text>
+            </g>
+          </svg>
+        </div>
+        <div class="flight-list">
+          <div class="flight">
+            <h3>去程 TG663</h3>
+            <dl>
+              <dt>日期</dt><dd>2026-07-18 周六</dd>
+              <dt>时间</dt><dd>07:30 PVG T2 -> 11:05 BKK</dd>
+              <dt>到机场</dt><dd>04:30 准时抵达浦东 T2</dd>
+              <dt>行李</dt><dd>泰航通常含托运和机上热餐，仍以订单为准</dd>
+            </dl>
+          </div>
+          <div class="flight">
+            <h3>回程 SL926</h3>
+            <dl>
+              <dt>日期</dt><dd>2026-07-25 周六</dd>
+              <dt>时间</dt><dd>18:10 DMK T1 -> 23:35 PVG T2</dd>
+              <dt>出发</dt><dd>14:15 必须离开曼谷市区去 DMK</dd>
+              <dt>行李</dt><dd>核对 Checked Baggage，不含就提前加购</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hotels">
+      <div class="section-head">
+        <div><h2>已确定住宿</h2><p class="lede">芭提雅前两晚住 OZO、后两晚住阿卡拉；曼谷住素坤逸 24 店。酒店完整名称待补充前，路线先按 Phrom Phong 一带衔接。</p></div>
+        <span class="pill">4 晚 + 3 晚</span>
+      </div>
+      <div class="hotel-grid">
+        <article class="hotel-card">
+          <h3>芭提雅 7/18-7/22</h3>
+          <ul>
+            <li><b>7/18-7/20：</b>OZO Pattaya，住 2 晚。</li>
+            <li><b>7/20-7/22：</b>阿卡拉酒店，住 2 晚。</li>
+            <li><b>换酒店：</b>D3 真理寺后从 OZO 退房、携行李到阿卡拉寄存，下午正式入住。</li>
+          </ul>
+        </article>
+        <article class="hotel-card">
+          <h3>曼谷 7/22-7/25</h3>
+          <ul>
+            <li><b>已确定：</b>素坤逸 24 店，住 3 晚（完整酒店名待补充）。</li>
+            <li><b>到店：</b>D5 从 Ekkamai 搭 BTS 或 Grab/Bolt 前往寄存行李。</li>
+            <li><b>出行：</b>按 Phrom Phong 一带规划，市内以 BTS 为主；河畔、老城和 DMK 预留堵车时间。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="days">
+      <div class="section-head">
+        <div><h2>D1-D8 每日路书</h2><p class="lede">每日主线完全遵循 Google 行程，补充执行备注和小红书避坑。时间是规划基线，雨季和堵车时优先保住交通与预约项目。</p></div>
+        <span class="pill gold">按时间线执行</span>
+      </div>
+      <div class="days">
+        <article class="day-card">
+          <div class="day-no"><b>D1</b><span>7/18 周六<br>落地芭提雅</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>上海 -> BKK -> 芭提雅：霓虹夜生活开启</h3><p>凌晨出发，中午落地，下午转芭提雅，晚上只轻量感受 Walking Street。</p></div>
+              <div class="day-tags"><span class="pill blue">TG663</span><span class="pill">机场大巴</span><span class="pill coral">不跟拉客</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>04:30</time><p>准时到达上海浦东机场 T2。</p></div>
+              <div class="timeline-row"><time>07:30-11:05</time><p>搭乘泰航 TG663 飞往曼谷素万那普机场 BKK。</p></div>
+              <div class="timeline-row"><time>11:05-12:30</time><p>办理入境，准备 TDAC 截图、返程机票、酒店预订单。</p></div>
+              <div class="timeline-row"><time>12:30-13:00</time><p>到 BKK 1 楼 8 号门柜台买去芭提雅大巴票，参考约 143 泰铢/人。</p></div>
+              <div class="timeline-row"><time>13:00-15:00</time><p>大巴到芭提雅，到站后用 Grab/Bolt 去酒店入住。</p></div>
+              <div class="timeline-row"><time>16:00-18:30</time><p>逛 Terminal 21 Pattaya，Pier 21 大排档适合第一餐。</p></div>
+              <div class="timeline-row"><time>20:00-22:00</time><p>打车去 Walking Street，只看霓虹、Live House 和热闹氛围。</p></div>
+            </div>
+            <details><summary>执行备注与避坑</summary><ul><li>这天凌晨出发，下午不要再塞真理寺或出海。</li><li>BKK 到芭提雅也可查 RRC Airport Pattaya Bus；班次不合适就用点到点接送。</li><li>不跟机场门口主动拉客的人走，不找代买车票黄牛。</li><li>Walking Street 不跟陌生人去二场，不接受不明酒水和服务推荐。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D2</b><span>7/19 周日<br>格兰岛</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>格兰岛出海 + 中天夜市</h3><p>海岛体验放在格兰岛，晚上在海边夜市轻松收尾。</p></div>
+              <div class="day-tags"><span class="pill blue">Koh Larn</span><span class="pill gold">Jomtien</span><span class="pill coral">末班船</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>09:00-15:30</time><p>打车到 Bali Hai Pier，坐快艇去格兰岛，在萨美或达元沙滩租躺椅，可体验拖曳伞或摩托艇。</p></div>
+              <div class="timeline-row"><time>15:30-16:30</time><p>坐船返回芭提雅，回酒店洗澡换衣服。</p></div>
+              <div class="timeline-row"><time>19:30-22:00</time><p>打车去 Jomtien Night Market，吃海鲜、烤鱼、芒果糯米饭；返程用 Grab/Bolt。</p></div>
+            </div>
+            <details><summary>格兰岛细节</summary><ul><li>芭提雅本岛海水一般，格兰岛才是海边体验重点。</li><li>公共船有笔记提到约 30 泰铢；快艇有笔记提到约 150 泰铢，以码头公告为准。</li><li>现场确认末班船，有笔记提醒约 17:00，不要压线。</li><li>沙滩椅常见 50-100 泰铢或 100 泰铢/天。</li><li>水上项目先问清项目、时长、是否含照片和接送，再谈价。</li><li>不建议无证租摩托；如果租车，取车前完整拍视频。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D3</b><span>7/20 周一<br>真理寺</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>真理寺 + 换酒店 + 商场避暑 + Tiffany</h3><p>晨游木雕建筑，轻松换酒店，商场和泳池休整后看夜场演艺。</p></div>
+              <div class="day-tags"><span class="pill">木雕建筑</span><span class="pill gold">换酒店</span><span class="pill coral">Tiffany 夜场</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>08:30-10:45</time><p>不带行李从 OZO 出发，打车去真理圣殿；尽量赶上约 09:10 的中文讲解。</p></div>
+              <div class="timeline-row"><time>11:00-12:00</time><p>回 OZO 退房，携行李前往阿卡拉酒店寄存。</p></div>
+              <div class="timeline-row"><time>12:15-16:00</time><p>在附近商场午餐、逛街、喝泰式奶茶，避开午后暴晒。</p></div>
+              <div class="timeline-row"><time>16:30-19:00</time><p>回阿卡拉酒店正式入住、休整；可安排泳池时间和简餐。</p></div>
+              <div class="timeline-row"><time>21:00-22:15</time><p>观看 Tiffany's Show 夜场，散场后合影并返回酒店。</p></div>
+            </div>
+            <details><summary>执行备注</summary><ul><li>真理寺是木雕建筑博物馆，不是烧香拜佛型寺庙。</li><li>定位搜 Ticket Office, Sanctuary of Truth；进去先拍露台机位，再跟讲解路线。</li><li>室内必须戴安全帽，中文讲解优先。</li><li>Tiffany 建议提前 1 周订票；21:00 场以订单实际开场时间为准。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D4</b><span>7/21 周二<br>大象营</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>大象保育营 + Let's Relax Spa + Cave Beach Club</h3><p>芭提雅最后一天，上午互动、下午恢复、傍晚海滩晚餐。</p></div>
+              <div class="day-tags"><span class="pill">不骑象</span><span class="pill gold">Spa</span><span class="pill blue">Cave Beach</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>06:30-07:00</time><p>酒店大堂等接送车，带换洗内衣裤、人字拖、毛巾。</p></div>
+              <div class="timeline-row"><time>08:00-11:30</time><p>换克伦族服装，喂大象、做营养象餐、泥潭互动、帮大象清洗，严格不骑象。</p></div>
+              <div class="timeline-row"><time>11:30-13:30</time><p>营地午餐后由官方车送回酒店。</p></div>
+              <div class="timeline-row"><time>13:30-15:45</time><p>回酒店洗澡、换上海滩晚餐衣物并休整。</p></div>
+              <div class="timeline-row"><time>15:45-16:45</time><p>打车前往 Cave Beach Club；雨天和晚高峰预留更长时间。</p></div>
+              <div class="timeline-row"><time>17:00-20:00</time><p>在 Cave Beach Club 海滩晚餐，预订靠海座位；日落以当天云层和天气为准。</p></div>
+              <div class="timeline-row"><time>20:30-22:30</time><p>到 Let's Relax Spa Pattaya Beachfront（海滩路 Soi 12）做 2 小时 Spa。</p></div>
+              <div class="timeline-row"><time>22:30 后</time><p>返回阿卡拉酒店，整理行李，为次日转场曼谷做准备。</p></div>
+            </div>
+            <details><summary>预约与避坑</summary><ul><li>大象保育营提前 1-2 周订，搜索 Elephant Jungle Sanctuary Pattaya。</li><li>只选明确不骑象、含接送的项目。</li><li>Let's Relax 提前 5 天以上预约；20:30 两小时项目需确认最晚入场时间。</li><li>Cave Beach Club 尽早订 17:00 靠海座位，并确认雨天规则。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D5</b><span>7/22 周三<br>回曼谷</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>芭提雅 -> 曼谷 + IconSiam + 湄南河游轮</h3><p>上午公共大巴转战曼谷，下午室内水上市场，晚上游轮夜景。</p></div>
+              <div class="day-tags"><span class="pill">Ekkamai</span><span class="pill blue">IconSiam</span><span class="pill gold">游轮</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>09:00-09:30</time><p>酒店退房，打车去 Pattaya Bus Station。</p></div>
+              <div class="timeline-row"><time>09:30-11:30</time><p>买去曼谷东站 Ekkamai 的大巴票，参考约 120 泰铢/人。</p></div>
+              <div class="timeline-row"><time>11:30-12:30</time><p>到 Ekkamai 后坐 BTS 去曼谷酒店，寄存行李。</p></div>
+              <div class="timeline-row"><time>14:00-17:30</time><p>前往 IconSiam，G 层室内水上市场扫摊，高层露台看湄南河。</p></div>
+              <div class="timeline-row"><time>19:00-21:00</time><p>在 IconSiam 码头登上提前订好的湄南河游轮，吃自助餐、看夜景。</p></div>
+            </div>
+            <details><summary>交通与游轮提醒</summary><ul><li>芭提雅到曼谷大巴车程约 2.5-3 小时，现金购票更稳。</li><li>大件行李可能加收，小红书笔记提到 26 寸以上可能加收约 20 泰铢/件。</li><li>大巴空调冷，带薄外套。</li><li>游轮提前 1 周订，备注 Outdoor Deck，确认船名、码头和集合时间。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D6</b><span>7/23 周四<br>郊区团</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>美功铁道 + 丹嫩沙多 + Mahanakhon</h3><p>白天传统市井，傍晚高空玻璃栈道。</p></div>
+              <div class="day-tags"><span class="pill">一日游</span><span class="pill gold">长尾船</span><span class="pill blue">Mahanakhon</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>08:00</time><p>一日游大巴在市区指定集合点接人。</p></div>
+              <div class="timeline-row"><time>10:00-11:30</time><p>美功铁道市场，看火车进站和摊贩收摊。</p></div>
+              <div class="timeline-row"><time>12:00-14:30</time><p>丹嫩沙多水上市场，坐长尾船穿梭水道。</p></div>
+              <div class="timeline-row"><time>16:30</time><p>旅游大巴送回曼谷市区解散。</p></div>
+              <div class="timeline-row"><time>17:30-19:30</time><p>打车去 Mahanakhon，78 层玻璃栈道，拍日落大片。</p></div>
+              <div class="timeline-row"><time>20:00</time><p>在旁边商场吃晚餐，回酒店休息。</p></div>
+            </div>
+            <details><summary>执行备注</summary><ul><li>一日游提前 5-7 天订，选含市区接送的中/英文小团。</li><li>看清集合点和解散点，优先选靠近 BTS/MRT 的地点。</li><li>美功铁道火车时刻会调整，一日团会按当天运行情况安排。</li><li>丹嫩沙多商业化较强，重点体验长尾船，购物克制。</li><li>Mahanakhon 玻璃栈道受雷雨影响，购票前看天气。</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D7</b><span>7/24 周五<br>泰拳夜</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>大皇宫 + 郑王庙泰服 + 泰拳 + Jodd Fairs</h3><p>白天人文和泰服大片，晚上拳赛和夜市。</p></div>
+              <div class="day-tags"><span class="pill gold">大皇宫</span><span class="pill">泰服</span><span class="pill coral">拳赛后防宰</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>08:30-10:30</time><p>大皇宫 + 玉佛寺，清晨出发避开暴晒和大客流。</p></div>
+              <div class="timeline-row"><time>10:30-13:00</time><p>坐过河船到郑王庙，租泰服拍情侣大片。</p></div>
+              <div class="timeline-row"><time>13:30-16:30</time><p>回 Siam 商圈午餐、逛街、下午茶，躲开午后最热时段。</p></div>
+              <div class="timeline-row"><time>16:30-18:00</time><p>回酒店洗澡，换轻便便装。</p></div>
+              <div class="timeline-row"><time>18:15-18:45</time><p>前往 Rajadamnern Stadium 迦南隆拳场。</p></div>
+              <div class="timeline-row"><time>19:00-21:30</time><p>观看迦南隆泰拳之夜，建议 Club Class 或 Ringside。</p></div>
+              <div class="timeline-row"><time>21:45-23:30</time><p>拳赛后去 Jodd Fairs，吃火山排骨、水果冰沙、芒果糯米饭。</p></div>
+            </div>
+            <details><summary>寺庙、泰服与打车</summary><ul><li>大皇宫着装遮肩过膝，不信路边“今天不开门”。</li><li>郑王庙泰服拍照前确认套餐是否含妆发、饰品、摄影师、精修。</li><li>泰拳票提前 1 周在 Klook 订，二维码换实体票。</li><li>拳赛 21:15 左右提前用 Bolt/Grab 叫车，上车点不要定在正门口。</li><li>叫不到车就拦正在行驶中的出租车，上车前问 By meter?</li></ul></details>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="day-no"><b>D8</b><span>7/25 周六<br>DMK 返程</span></div>
+          <div class="day-body">
+            <div class="day-top">
+              <div class="day-title"><h3>四面佛 + Big C + 建兴酒家 + DMK 回上海</h3><p>最后半天参拜、补货、告别餐，14:15 必须出发去廊曼。</p></div>
+              <div class="day-tags"><span class="pill">Big C</span><span class="pill gold">14:15</span><span class="pill coral">Checked Baggage</span></div>
+            </div>
+            <div class="timeline">
+              <div class="timeline-row"><time>09:00-09:30</time><p>退房，行李寄存在酒店前台，去四面佛参拜。</p></div>
+              <div class="timeline-row"><time>09:30-12:30</time><p>到 Big C Supercenter Siam 店补货，控制重量。</p></div>
+              <div class="timeline-row"><time>12:30-14:00</time><p>在商场吃建兴酒家，推荐咖喱蟹和冬阴功汤。</p></div>
+              <div class="timeline-row"><time>14:15</time><p>死命令，拿上行李打车出发去廊曼机场 DMK T1。</p></div>
+              <div class="timeline-row"><time>15:30-18:10</time><p>办理 SL926 值机、称重行李、托运和登机。</p></div>
+              <div class="timeline-row"><time>23:35</time><p>抵达上海浦东 T2。</p></div>
+            </div>
+            <details><summary>返程执行重点</summary><ul><li>回程机场是 DMK 廊曼 T1，不是 BKK 素万那普。</li><li>7 月 25 日周六下午，曼谷市区往北去廊曼可能非常堵。</li><li>目标 15:30 前到柜台，退税、托运、安检都可能排队。</li><li>狮航 SL926 行李额必须提前确认；没有 Checked Baggage 就线上加购。</li><li>液体、香氛、药品注意托运和中国入境规定。</li></ul></details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="section-head">
+        <div><h2>提前预约清单</h2><p class="lede">7 月是暑期旺季，核心项目建议出发前 1-2 周处理。TDAC 只能在抵达前 3 天内提交。</p></div>
+        <span class="pill coral">先订项目</span>
+      </div>
+      <div class="booking-wrap">
+        <table class="booking-table">
+          <thead><tr><th>项目</th><th>提前多久</th><th>推荐渠道</th><th>核心避坑</th></tr></thead>
+          <tbody>
+            <tr><td>TDAC 电子入境卡</td><td>抵达前 3 天内</td><td>tdac.immigration.go.th</td><td>免费申报，保存 QR Code 截图。</td></tr>
+            <tr><td>芭提雅大象保育营</td><td>1-2 周</td><td>Klook / 携程 / 淘宝</td><td>选不骑象、含接送的项目。</td></tr>
+            <tr><td>Tiffany's Show</td><td>1 周</td><td>携程 / 美团 / Klook</td><td>安排 D3 21:00 夜场；VIP 或黄金 VIP 更稳。</td></tr>
+            <tr><td>真理圣殿</td><td>3-5 天</td><td>淘宝 / 携程 / Klook / 官网</td><td>电子凭证换实体票，室内戴安全帽。</td></tr>
+            <tr><td>湄南河游轮晚宴</td><td>1 周</td><td>Klook / 携程 / 淘宝</td><td>备注 Outdoor Deck，确认船名和码头。</td></tr>
+            <tr><td>美功铁道 + 丹嫩沙多一日游</td><td>5-7 天</td><td>携程 / 马蜂窝 / Klook</td><td>选含市区接送的小团，看清集合和解散地点。</td></tr>
+            <tr><td>迦南隆泰拳</td><td>1 周</td><td>Klook</td><td>推荐 Club Class 或 Ringside，二维码换实体票。</td></tr>
+            <tr><td>Let's Relax Spa</td><td>5 天以上</td><td>官方预约 / 淘宝代订 / Klook</td><td>安排 D4 20:30 Beachfront 门店；确认 2 小时项目最晚入场时间。</td></tr>
+            <tr><td>Cave Beach Club</td><td>尽早</td><td>官方渠道 / 可靠代订</td><td>预约 D4 17:00 靠海座位，确认雨天规则。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="transport">
+      <div class="section-head">
+        <div><h2>交通细节</h2><p class="lede">这条路线的交通关键点是 BKK 直接去芭提雅、7 月 22 日从 Pattaya Bus Station 到 Ekkamai、7 月 25 日 14:15 准时去 DMK。</p></div>
+        <span class="pill blue">低风险换城</span>
+      </div>
+      <div class="transport-grid">
+        <article class="transport-card"><h3>BKK -> 芭提雅</h3><ul><li>主方案：BKK 1 楼 8 号门买公共大巴票。</li><li>参考价：Google 行程约 143 泰铢/人；现场为准。</li><li>备选：RRC Airport Pattaya Bus 或点到点接送。</li><li>不跟机场拉客，不买黄牛票。</li></ul></article>
+        <article class="transport-card"><h3>芭提雅 -> 曼谷</h3><ul><li>Pattaya Bus Station 到 Ekkamai Bus Terminal。</li><li>参考价：Google 行程约 120 泰铢/人。</li><li>车程约 2.5-3 小时，视交通情况。</li><li>现金购票更稳，大件行李可能加收。</li></ul></article>
+        <article class="transport-card"><h3>曼谷 -> DMK</h3><ul><li>返程日 14:15 必须从市区出发。</li><li>导航写 Don Mueang International Airport Terminal 1。</li><li>目标 15:30 前到达柜台。</li><li>SL926 行李额提前核对。</li></ul></article>
+      </div>
+    </section>
+
+    <section id="spots">
+      <div class="section-head">
+        <div><h2>关键景点执行提示</h2><p class="lede">每个景点只保留对实际执行有帮助的判断：值得去的原因、最容易出错的点、以及天气或体力不佳时的取舍。</p></div>
+        <span class="pill">现场取舍</span>
+      </div>
+      <div class="tips-grid">
+        <article class="tip-card"><h3>格兰岛</h3><ul><li>芭提雅本岛海水预期不要太高，格兰岛是海边重点。</li><li>公共船便宜、快艇更快，价格以码头为准。</li><li>确认末班船，不压最后一班。</li><li>不建议无证租摩托，坡路和急弯多。</li></ul></article>
+        <article class="tip-card"><h3>真理寺</h3><ul><li>本质是木雕建筑博物馆，不是烧香拜佛型寺庙。</li><li>定位到售票处，先拍露台机位。</li><li>室内戴安全帽，中文讲解优先。</li><li>线上票到现场换实体票。</li></ul></article>
+        <article class="tip-card"><h3>大皇宫与郑王庙</h3><ul><li>大皇宫早去，避开暴晒和旅行团。</li><li>着装遮肩过膝。</li><li>郑王庙适合泰服拍照，雨后台阶滑。</li><li>不信路边“今天不开门”。</li></ul></article>
+        <article class="tip-card"><h3>IconSiam 游轮</h3><ul><li>G 层室内水上市场适合雨天和避暑。</li><li>游轮确认码头、登船时间、船名和座位。</li><li>露天甲板浪漫，但雨季要有室内备选。</li></ul></article>
+        <article class="tip-card"><h3>Mahanakhon</h3><ul><li>适合日落前后去。</li><li>雷雨可能影响玻璃栈道开放或体验。</li><li>恐高的人量力而行。</li></ul></article>
+        <article class="tip-card"><h3>泰拳后打车</h3><ul><li>不要坐拳场门口主动拉客车。</li><li>21:15 左右提前用 Bolt/Grab 叫车。</li><li>上车点设在马路对面便利店或咖啡馆。</li><li>路边出租车先问 By meter?</li></ul></article>
+      </div>
+    </section>
+
+    <section id="budget">
+      <div class="section-head">
+        <div><h2>2 人预算</h2><p class="lede">Google 行程包含较多预约项目，所以项目费用会高于普通自由行。以下不含购物。</p></div>
+        <span class="pill gold">不含购物</span>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-card">
+          <h3>主要支出</h3>
+          <div class="budget-row"><span>国际机票</span><div class="bar"><i style="width:70%"></i></div><b>¥5,000-10,000</b></div>
+          <div class="budget-row"><span>酒店 7 晚</span><div class="bar"><i style="width:56%"></i></div><b>¥3,500-7,500</b></div>
+          <div class="budget-row"><span>跨城交通</span><div class="bar"><i style="width:24%"></i></div><b>几百-1,600</b></div>
+          <div class="budget-row"><span>市内交通</span><div class="bar"><i style="width:32%"></i></div><b>¥1,000-2,500</b></div>
+          <div class="budget-row"><span>餐饮</span><div class="bar"><i style="width:42%"></i></div><b>¥2,500-5,000</b></div>
+          <div class="budget-row"><span>项目按摩</span><div class="bar"><i style="width:64%"></i></div><b>¥3,000-6,500</b></div>
+        </div>
+        <div class="budget-total">
+          <span>2 人总计参考</span>
+          <strong>¥16,000-32,000</strong>
+          <p>省钱点是两段跨城都坐公共大巴、格兰岛坐公共船、部分付费项目按兴趣二选一；舒适点是跨城接送、好座位、Spa 和餐厅提前锁定。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="section-head">
+        <div><h2>总避坑清单</h2><p class="lede">这些不是泛泛提醒，都是会直接影响体验和花费的操作细节。</p></div>
+        <span class="pill coral">优先记住</span>
+      </div>
+      <div class="tips-grid">
+        <article class="tip-card"><h3>人和团</h3><ul><li>主动靠近、会中文和泰语、热情带路的人保持距离。</li><li>不跟陌生人去“更便宜的票”或“更好玩的店”。</li><li>私信推私人团要谨慎，可能有购物团托。</li></ul></article>
+        <article class="tip-card"><h3>交通</h3><ul><li>曼谷高峰期和雨天堵车严重。</li><li>返程日绝不从芭提雅赶回曼谷再飞上海。</li><li>公共大巴空调冷，带薄外套。</li></ul></article>
+        <article class="tip-card"><h3>海边</h3><ul><li>水上项目多问几家，先谈总价。</li><li>玩水只带必要现金和防水袋。</li><li>末班船现场确认。</li></ul></article>
+        <article class="tip-card"><h3>购物</h3><ul><li>街边水果、榴莲先确认单价和重量。</li><li>Big C 补货控制重量，别让狮航托运超重。</li><li>液体、香氛、药品注意托运和入境规定。</li></ul></article>
+        <article class="tip-card"><h3>机场</h3><ul><li>SL926 从 DMK T1 起飞，14:15 必须出发。</li><li>没有 Checked Baggage 就提前线上加购。</li><li>退税、托运、安检都可能排队。</li></ul></article>
+        <article class="tip-card"><h3>安全</h3><ul><li>旅游警察 1155，报警 191。</li><li>不参与灰色兼职、博彩、投资或陌生招聘。</li><li>护照、保险、酒店、机票截图离线保存。</li></ul></article>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="section-head">
+        <div><h2>临行检查清单</h2><p class="lede">出发前把这些一次性准备好，落地后就少处理临时问题。</p></div>
+        <span class="pill">可直接照做</span>
+      </div>
+      <div class="check-grid">
+        <article class="check-card"><h3>证件入境</h3><ul><li>护照有效期 6 个月以上。</li><li>TDAC 抵达前 3 天内填写，保存 QR Code。</li><li>往返机票英文单、酒店预订单、旅游保险。</li></ul></article>
+        <article class="check-card"><h3>现金支付</h3><ul><li>情侣两人可准备约 20000 泰铢现金。</li><li>保留小额泰铢用于厕所、双条车、小摊、寺庙、小费。</li><li>也可带人民币现金到泰国换，但注意手续费和汇率。</li></ul></article>
+        <article class="check-card"><h3>通讯 App</h3><ul><li>AIS / TrueMove 电话卡或 eSIM。</li><li>Google Maps、Grab、Bolt、翻译、汇率换算。</li><li>安卓如果商店受限，提前处理 Grab 下载问题。</li></ul></article>
+        <article class="check-card"><h3>衣物装备</h3><ul><li>遮肩上衣、过膝裤裙、薄外套。</li><li>SPF50+ 防晒、墨镜、帽子、雨具。</li><li>防水袋、泳衣、拖鞋、肠胃药、晕车药。</li></ul></article>
+        <article class="check-card"><h3>行李</h3><ul><li>TG663 泰航行李仍以订单为准。</li><li>SL926 狮航必须核对 Checked Baggage。</li><li>计划 Big C 大采购时，至少提前 24 小时线上加购狮航行李额。</li></ul></article>
+        <article class="check-card"><h3>预约</h3><ul><li>大象营、Tiffany、真理寺、游轮、一日游、泰拳、Spa。</li><li>所有二维码和订单截图离线保存。</li><li>核对每个项目集合点、时间、取消规则。</li></ul></article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <div><h2>素材与来源</h2><p class="lede">页面内容整合自 Google 路线版 Markdown、小红书搜索素材和官方核验来源。价格和开放时间出发前仍需复核。</p></div>
+        <span class="pill gray">2026-06-29</span>
+      </div>
+      <div class="source-grid">
+        <article class="source-card"><h3>TDAC</h3><a href="https://tdac.immigration.go.th/" target="_blank" rel="noreferrer">Thailand Digital Arrival Card</a><p>电子入境卡官方入口。</p></article>
+        <article class="source-card"><h3>TDAC 中文指南</h3><a href="https://tdac.immigration.go.th/manual/cn/index.html" target="_blank" rel="noreferrer">官方中文说明</a><p>填写步骤参考。</p></article>
+        <article class="source-card"><h3>真理寺</h3><a href="https://sanctuaryoftruthmuseum.com/visit-us/" target="_blank" rel="noreferrer">Sanctuary of Truth Visit Us</a><p>开放时间与票价以官网为准。</p></article>
+        <article class="source-card"><h3>机场巴士</h3><a href="https://airportpattayabus.com/" target="_blank" rel="noreferrer">RRC Airport Pattaya Bus</a><p>BKK 与芭提雅巴士时刻参考。</p></article>
+        <article class="source-card"><h3>小红书素材</h3><p>已归纳格兰岛、真理寺、交通、双条车、退税、行李和购物团避坑，不直接照搬原文。</p></article>
+        <article class="source-card"><h3>可视化后续</h3><p>下一步可把每日卡片、路线图、预约清单和避坑模块做成交互式筛选或打印版。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <a class="backtop" href="#top" aria-label="回到顶部">↑</a>
+</body>
+</html>
